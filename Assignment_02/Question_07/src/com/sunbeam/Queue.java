@@ -14,13 +14,13 @@ public class Queue {
 	
 	public void push(int data)
 	{
-		rear++;
+		//rear;
 		arr[rear]=data;
 	}
 	
 	public void pop()
 	{
-		front++;
+		front;
 	}
 	
 	public int peek()
