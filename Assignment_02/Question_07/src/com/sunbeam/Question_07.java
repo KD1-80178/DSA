@@ -5,49 +5,43 @@ import java.util.Scanner;
 public class Question_07 {
 
 	public static void main(String[] args) {
-		Queue q=new Queue(5);
+		Queue q=new Queue(6);
 		int choice;
-		
+		Scanner sc=new Scanner(System.in);
 		do
 		{
-			System.out.println("Enter the choice = ");
-			System.out.println("1. push");
-			System.out.println("2. pop");
-			System.out.println("3. peek");
-			choice=new Scanner(System.in).nextInt();
+			System.out.println("0.Exit");
+			System.out.println("1.Push");
+			System.out.println("2.Pop");
+			System.out.println("3.Peek");
+			System.out.println("Enter your choice");
+			choice=sc.nextInt();
 			
 			switch(choice)
 			{
 			case 1:
 				if(q.isFull())
-					System.out.println("Queue is full..");
-				else
-				{
-					System.out.println("Enter the data to be pushed");
-					int data=new Scanner(System.in).nextInt();
+					System.out.println("Queue is full");
+				else {
+					System.out.print("Enter data : ");
+					int data = sc.nextInt();
 					q.push(data);
-					System.out.println("Data is pushed");
 				}
 				break;
-				
 			case 2:
 				if(q.isEmpty())
 					System.out.println("Queue is Empty");
 				else
 					q.pop();
-				System.out.println("data is deleted");
 				break;
-				
 			case 3:
 				if(q.isEmpty())
 					System.out.println("Queue is Empty");
 				else
-				System.out.println("Peeked Data= "+q.peek());
+					System.out.println("Peeked Data : " + q.peek());
 				break;
 			}
-		}while(choice!=0);
-		
-		
+			
+		}while(choice !=0);
 	}
-
 }
